@@ -18,5 +18,64 @@
 
       <input type="submit" value="Generieren" />
     </form>
+
+    <div id="code-container"></div>
+
+    <script>
+      const form = document.querySelector("form");
+      const codeContainer = document.querySelector("#code-container");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const task = document.querySelector("#task").value;
+        const language = document.querySelector("#language").value;
+
+        let generatedCode = "";
+
+        switch (language) {
+          case "html":
+            generatedCode = generateHtmlCode(task);
+            break;
+          case "css":
+            generatedCode = generateCssCode(task);
+            break;
+          case "javascript":
+            generatedCode = generateJavaScriptCode(task);
+            break;
+          default:
+            generatedCode = "Ungültige Sprache ausgewählt.";
+            break;
+        }
+
+        codeContainer.innerHTML = `
+          <textarea>${generatedCode}</textarea>
+        `;
+      });
+
+      function generateHtmlCode(task) {
+        let code = "";
+
+        // Code für HTML-Aufgabe generieren
+
+        return code;
+      }
+
+      function generateCssCode(task) {
+        let code = "";
+
+        // Code für CSS-Aufgabe generieren
+
+        return code;
+      }
+
+      function generateJavaScriptCode(task) {
+        let code = "";
+
+        // Code für JavaScript-Aufgabe generieren
+
+        return code;
+      }
+    </script>
   </body>
 </html>
